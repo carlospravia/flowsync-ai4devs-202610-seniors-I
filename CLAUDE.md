@@ -33,7 +33,7 @@ npm run dev          # http://localhost:5173 (launch.json uses --strictPort)
 npm run build        # tsc -b && vite build
 npm run lint         # oxlint (not ESLint)
 ```
-The frontend has no test runner and no formatter configured.
+The frontend has no test runner. Prettier is installed in `frontend/` and runs automatically on `frontend/src/**` through the PostToolUse hook in `.claude/settings.json`; it is not wired to an npm script.
 
 ## Backend architecture
 

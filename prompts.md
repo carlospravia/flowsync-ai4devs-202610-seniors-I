@@ -98,7 +98,7 @@ Ya llevé a cabo la última pieza, la de AGENTS.md como enlace a CLAUDE.md. Prim
 Sí, configurá el MCP de Atlassian en el proyecto
 ```
 
-**Qué salió:** Listo, el MCP de Atlassian quedó configurado a nivel de proyecto en .mcp.json, apuntando al servidor remoto oficial https://mcp.atlassian.com/v1/mcp. También actualicé /priority-ticket para que mencione mcp**atlassian**\*, que es el nombre que toman las herramientas con este servidor.
+**Qué salió:** Listo, el MCP de Atlassian quedó configurado a nivel de proyecto en .mcp.json, apuntando al servidor remoto oficial https://mcp.atlassian.com/v1/mcp. También actualicé /priority-ticket para que mencione `mcp__atlassian__*`, que es el nombre que toman las herramientas con este servidor.
 
 ## Prompt 8
 
@@ -124,4 +124,4 @@ Ejecuta /priority-ticket correctamente y muestra el plan detallado con el contex
 Trae el ticket de Jira de mayor prioridad asignado a mí en «To Do», resume sus criterios de aceptación y entra en plan mode para proponer cómo implementarlo. Muestra el plan detallado con el contexto, los criterios de aceptación, los gaps entre el ticket y el backend, los archivos que serán modificados y los que serán creados. No apliques el plan.
 ```
 
-**Qué salió:** Sin intervenir, llegó a Jira igual que la copia con harness: no por el .mcp.json del proyecto (la pelada no lo tiene) sino por el conector de Atlassian de la cuenta de claude.ai. Llamó al MCP 3 veces, corrió 1 comando de shell y entró en plan mode. Presentó el plan de corrido, 0 intervenciones; no se aprobó. Plan guardado tal cual en docs/harness/claude-plan-sin-harness.txt.
+**Qué salió:** Sin intervenir, llegó a Jira igual que la copia con harness: no por el .mcp.json del proyecto (la pelada no lo tiene) sino por el conector de Atlassian de la cuenta de claude.ai. Llamó al MCP 3 veces, corrió 1 comando de shell y entró en plan mode. Presentó el plan de corrido, 0 intervenciones; no se aprobó.
