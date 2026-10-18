@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Priority ticket
 
-Uses the Atlassian MCP server (`mcp__claude_ai_Atlassian_MCP__*`). Load tool schemas with ToolSearch first if they are deferred.
+Uses the Atlassian MCP server configured in `.mcp.json` (tools named `mcp__atlassian__*`; the claude.ai connector `mcp__claude_ai_Atlassian_MCP__*` exposes the same operations). Load tool schemas with ToolSearch first if they are deferred.
 
 ## 1. Fetch the ticket
 
