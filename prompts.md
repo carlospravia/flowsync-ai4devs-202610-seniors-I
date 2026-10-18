@@ -22,7 +22,7 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -35,7 +35,7 @@ Crea una skill /priority-ticket: trae el ticket de Jira, usando el MCP de Atlass
 
 ## Prompt 2
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -46,7 +46,7 @@ Crea Una skill /commit: un commit convencional (tipo(scope): descripción) a par
 
 ## Prompt 3
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -57,7 +57,7 @@ Crea un subagente adversarial-reviewer: revisa un pull request intentando romper
 
 ## Prompt 4
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -69,7 +69,7 @@ Bien, ahora necesito un hook que formatea el frontend cada vez que el agente edi
 
 ## Prompt 5
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -80,7 +80,7 @@ Ahora vamos con Las reglas de proceso, al final del CLAUDE.md: rama nueva antes 
 
 ## Prompt 6
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -91,7 +91,7 @@ Ya llevé a cabo la última pieza, la de AGENTS.md como enlace a CLAUDE.md. Prim
 
 ## Prompt 7
 
-**Modelo:** Sonnet 5.5 1M xHigh
+**Modelo:** Sonnet 5.5 1M Medium effort
 **Herramienta:** Claude Code
 
 ```
@@ -99,3 +99,29 @@ Sí, configurá el MCP de Atlassian en el proyecto
 ```
 
 **Qué salió:** Listo, el MCP de Atlassian quedó configurado a nivel de proyecto en .mcp.json, apuntando al servidor remoto oficial https://mcp.atlassian.com/v1/mcp. También actualicé /priority-ticket para que mencione mcp**atlassian**\*, que es el nombre que toman las herramientas con este servidor.
+
+## Prompt 8
+
+**Modelo:** Sonnet 5.5 1M Medium effort
+**Herramienta:** Claude Code
+
+```
+Ejecuta /priority-ticket correctamente y muestra el plan detallado con el contexto, los criterios de acptación, los gaps entre el tickete y el backend, los archivos que serán modificados y los que serán creados
+```
+
+**Qué salió:** Se ejecuta correctamente el skill, a la primera me mostró el plan detallado
+
+---
+
+> A partir de aquí, la corrida en **la copia pelada** (`flowsync-sin-harness/`): sin `CLAUDE.md`, sin `.mcp.json`, sin skills ni hooks del proyecto. Mismo ticket, misma instrucción escrita a mano.
+
+## Prompt 9
+
+**Modelo:** Sonnet 5.5
+**Herramienta:** Claude Code (terminal, copia sin harness)
+
+```
+Trae el ticket de Jira de mayor prioridad asignado a mí en «To Do», resume sus criterios de aceptación y entra en plan mode para proponer cómo implementarlo. Muestra el plan detallado con el contexto, los criterios de aceptación, los gaps entre el ticket y el backend, los archivos que serán modificados y los que serán creados. No apliques el plan.
+```
+
+**Qué salió:** Sin intervenir, llegó a Jira igual que la copia con harness: no por el .mcp.json del proyecto (la pelada no lo tiene) sino por el conector de Atlassian de la cuenta de claude.ai. Llamó al MCP 3 veces, corrió 1 comando de shell y entró en plan mode. Presentó el plan de corrido, 0 intervenciones; no se aprobó. Plan guardado tal cual en docs/harness/claude-plan-sin-harness.txt.
